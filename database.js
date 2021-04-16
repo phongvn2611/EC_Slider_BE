@@ -1,11 +1,13 @@
-'use strict';
-const mongoose = require('mongoose');
+"use strict";
+const mongoose = require("mongoose");
 
 module.exports = () => {
-    mongoose.connect('mongodb+srv://demo:demo@cluster0.lqkwi.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true,
-        useFindAndModify: true,
-    }).then(() => console.log('Connected to Mongodb......'));
-}
+  mongoose
+    .connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: true,
+    })
+    .then(() => console.log("Connected to Mongodb......"));
+};
